@@ -25,7 +25,8 @@ mean(first_df$vec_char)
 mean(first_df$vec_factor) 
 
 ```
-The means of the random sample vector and logical vector are able to be calculated since there are real numbers in the vectors (True and False are assigned values 1 and 0). On the other hand, the means of the character vector and factor vector cannot be calculated because there are no numbers assigned to those vectors. 
+*What happens?*   
+The means of the random sample vector and logical vector are able to be calculated since there are real numbers in the vectors (True and False are assigned values 1 and 0). The mean of the logical vector essentially shows the proportion of TRUEs in the vector. On the other hand, the means of the character vector and factor vector cannot be calculated because there are no numbers assigned to those vectors. 
 
 
 
@@ -37,16 +38,18 @@ as.numeric(first_df$vec_char) #converts to a vector full of NA since there is no
 as.numeric(first_df$vec_factor) #saying first element is level 2 
 
 ```
-The logic vector is able to be turned into a numeric vector since True and False can be converted to 1 and 0, respectively, in R. The factor vector is able to be converted into a numeric vector related to the levels of the values in it. The character vector is turned into a vector full of NA's since a character does not have an associated number.
+*What happens?*   
+The logic vector is able to be turned into a numeric vector since True and False can be converted to 1 and 0, respectively, in R. The factor vector is able to be converted into a numeric vector related to the levels of the values in it. The character vector is turned into a vector full of NA's since a character cannot be coerced into a numeric.
 
 
-
+**Converting a Variable Twice**
 ```{r}
 as.numeric(as.factor(first_df$vec_char)) # converting from charcter to factor to numeric
 
 as.numeric(as.character(first_df$vec_factor)) # from factor to character to numeric 
 ```
-The character vector is turned into a factor vector with two levels "FALSE" and "TRUE". The factor is then turned into a numeric vector according to the levels- 1 and 2- of the values in the factor vector. The reverse, however, does not work. Though the factor vector can be turned into a character vector, the character vector cannot be converted to a numeric vector since it is fully of characters "TRUE" and "FALSE".
+*What happens?*   
+The character vector is turned into a factor vector with two levels "FALSE" and "TRUE". The factor is then turned into a numeric vector according to the levels- 1 and 2- of the values in the factor vector. The reverse, however, does not work. Though the factor vector can be turned into a character vector, the character vector cannot be converted to a numeric vector since it is full of characters "TRUE" and "FALSE".
 
 
 ## Problem 2
@@ -64,13 +67,14 @@ second_df = data.frame(x, y, pr2_log, pr2_numeric, pr2_factor)
 
 
 ```
+*Description of data frame*  
 size of data set: `r nrow(second_df)` rows and `r ncol(second_df)` columns 
 
 mean of x = `r mean(x)`    
 
 median of x = `r median(x)`   
 
-proportion of cases logical vector is true = `r mean(pr2_log)*100`%       
+proportion of cases logical vector is true = `r mean(pr2_log)`      
 
 
 
@@ -80,12 +84,15 @@ proportion of cases logical vector is true = `r mean(pr2_log)*100`%
 library(ggplot2)
 
 plot_log = ggplot(second_df, aes(x = x, y = y, color = pr2_log)) + geom_point()
+
 plot_log
 
 plot_num = ggplot(second_df, aes(x = x, y = y, color = pr2_numeric)) + geom_point()
-plot_num #since it is numeric vector it is continuous
+
+plot_num     #since it is numeric vector it is continuous
 
 plot_fac = ggplot(second_df, aes(x = x, y = y, color = pr2_factor)) + geom_point()
+
 plot_fac
 
 ggsave("plot1.jpg", plot_log)
