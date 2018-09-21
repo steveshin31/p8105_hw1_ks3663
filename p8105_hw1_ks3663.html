@@ -160,7 +160,13 @@ mean(pr1_df$random_sample) # taking the mean of each variable in the data frame 
 <pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>
 <pre class="r"><code>as.numeric(pr1_df$vec_factor) #saying first element is level 2 </code></pre>
 <pre><code>##  [1] 1 1 2 2 1 2 2 2 2 1</code></pre>
-<p>The logic vector is able to be turned into a numeric vector since True and False can be converted to 1 and 0, respectively, in R. The character vector is turned into a vector full of NA’s since a character does not have an associated number. The same follows for the factor vector.</p>
+<p>The logic vector is able to be turned into a numeric vector since True and False can be converted to 1 and 0, respectively, in R. The factor vector is able to be converted into a numeric vector related to the levels of the values in it. The character vector is turned into a vector full of NA’s since a character does not have an associated number.</p>
+<pre class="r"><code>as.numeric(as.factor(pr1_df$vec_char)) # converting from charcter to factor to numeric</code></pre>
+<pre><code>##  [1] 1 1 2 2 1 2 2 2 2 1</code></pre>
+<pre class="r"><code>as.numeric(as.character(pr1_df$vec_factor)) # from factor to character to numeric </code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>
+<p>The character vector is turned into a factor vector with two levels “FALSE” and “TRUE”. The factor is then turned into a numeric vector according to the levels- 1 and 2- of the values in the factor vector. The reverse, however, does not work. Though the factor vector can be turned into a character vector, the character vector cannot be converted to a numeric vector since it is fully of characters “TRUE” and “FALSE”.</p>
 </div>
 
 
