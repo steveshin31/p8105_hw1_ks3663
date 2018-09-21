@@ -6,6 +6,8 @@ output: html_document
 ---
 ## Problem 1
 
+
+**Creating Problem 1 Data Frame**
 ```{r}
 set.seed(1)
 
@@ -25,6 +27,8 @@ mean(pr1_df$vec_factor)
 The means of the random sample vector and logical vector are able to be calculated since there are real numbers in the vectors (True and False are assigned values 1 and 0). On the other hand, the means of the character vector and factor vector cannot be calculated because there are no numbers assigned to those vectors. 
 
 
+
+**Converting Variables From One Type to Another**
 ```{r warning=FALSE, eacho=TRUE, results='hide'}
 
 as.numeric(pr1_df$vec_logic) #converts to values of 1 and 0
@@ -33,6 +37,7 @@ as.numeric(pr1_df$vec_factor) #saying first element is level 2
 
 ```
 The logic vector is able to be turned into a numeric vector since True and False can be converted to 1 and 0, respectively, in R. The factor vector is able to be converted into a numeric vector related to the levels of the values in it. The character vector is turned into a vector full of NA's since a character does not have an associated number.
+
 
 
 ```{r}
@@ -45,6 +50,7 @@ The character vector is turned into a factor vector with two levels "FALSE" and 
 
 ## Problem 2
 
+**Creating Problem 2 Data Frame**
 ```{r}
 
 x = rnorm(1000)
@@ -63,8 +69,11 @@ mean of x = `r mean(x)`
 
 median of x = `r median(x)`   
 
-proportion of cases logical vector is true = `r mean(pr2_log)*100`% 
+proportion of cases logical vector is true = `r mean(pr2_log)*100`%       
 
+
+
+**Creating Scatter Plots**
 ```{r}
 
 library(ggplot2)
@@ -83,4 +92,4 @@ ggsave("plot1.jpg", plot1)
 
 ```
 
-
+*hello*
