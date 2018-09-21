@@ -168,6 +168,16 @@ mean(pr1_df$random_sample) # taking the mean of each variable in the data frame 
 <pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>
 <p>The character vector is turned into a factor vector with two levels “FALSE” and “TRUE”. The factor is then turned into a numeric vector according to the levels- 1 and 2- of the values in the factor vector. The reverse, however, does not work. Though the factor vector can be turned into a character vector, the character vector cannot be converted to a numeric vector since it is fully of characters “TRUE” and “FALSE”.</p>
 </div>
+<div id="problem-2" class="section level2">
+<h2>Problem 2</h2>
+<pre class="r"><code>x = rnorm(1000)
+y = rnorm(1000)
+pr2_log = (x + y) &gt; 0
+pr2_numeric = as.numeric(pr2_log)  # coerced logical vector into numeric
+pr2_factor = as.factor(pr2_log)  # coerced logical vector into factor 
+
+pr2_df = data.frame(x, y, pr2_log, pr2_numeric, pr2_factor)</code></pre>
+</div>
 
 
 

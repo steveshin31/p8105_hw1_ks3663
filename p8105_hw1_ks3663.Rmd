@@ -41,3 +41,20 @@ as.numeric(as.factor(pr1_df$vec_char)) # converting from charcter to factor to n
 as.numeric(as.character(pr1_df$vec_factor)) # from factor to character to numeric 
 ```
 The character vector is turned into a factor vector with two levels "FALSE" and "TRUE". The factor is then turned into a numeric vector according to the levels- 1 and 2- of the values in the factor vector. The reverse, however, does not work. Though the factor vector can be turned into a character vector, the character vector cannot be converted to a numeric vector since it is fully of characters "TRUE" and "FALSE".
+
+
+## Problem 2
+
+```{r}
+
+x = rnorm(1000)
+y = rnorm(1000)
+pr2_log = (x + y) > 0
+pr2_numeric = as.numeric(pr2_log)  # coerced logical vector into numeric
+pr2_factor = as.factor(pr2_log)  # coerced logical vector into factor 
+
+pr2_df = data.frame(x, y, pr2_log, pr2_numeric, pr2_factor)
+
+
+```
+
