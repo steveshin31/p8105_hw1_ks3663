@@ -77,5 +77,10 @@ plot2 #since it is numeric vector it is continuous
 
 plot3 = ggplot(pr2_df, aes(x = x, y = y, color = pr2_factor)) + geom_point()
 plot3
+
+ggsave("plot1.jpg", plot1)
+
+
 ```
+
 
