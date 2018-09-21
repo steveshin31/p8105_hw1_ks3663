@@ -153,6 +153,14 @@ mean(pr1_df$random_sample) # taking the mean of each variable in the data frame 
 ## logical: returning NA</code></pre>
 <pre><code>## [1] NA</code></pre>
 <p>The means of the random sample vector and logical vector are able to be calculated since there are real numbers in the vectors (True and False are assigned values 1 and 0). On the other hand, the means of the character vector and factor vector cannot be calculated because there are no numbers assigned to those vectors.</p>
+<pre class="r"><code>as.numeric(pr1_df$vec_logic) #converts to values of 1 and 0</code></pre>
+<pre><code>##  [1] 0 0 1 1 0 1 1 1 1 0</code></pre>
+<pre class="r"><code>as.numeric(pr1_df$vec_char) #converts to a vector full of NA since there is no number</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>
+<pre class="r"><code>as.numeric(pr1_df$vec_factor) #saying first element is level 2 </code></pre>
+<pre><code>##  [1] 1 1 2 2 1 2 2 2 2 1</code></pre>
+<p>The logic vector is able to be turned into a numeric vector since True and False can be converted to 1 and 0, respectively, in R. The character vector is turned into a vector full of NA’s since a character does not have an associated number. The same follows for the factor vector.</p>
 </div>
 
 
