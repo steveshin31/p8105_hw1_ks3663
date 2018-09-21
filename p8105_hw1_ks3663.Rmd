@@ -1,0 +1,24 @@
+---
+title: "p8105_hw1_ks3663"
+author: "Kee-Young Shin"
+date: "September 13, 2018"
+output: html_document
+---
+
+```{r}
+Random_Sample = data.frame(Numbers = runif(10, min = 0, max = 5
+                                           ))
+Greater = c(Random_Sample[if(Random_Sample>= 2) print("True") else {print("False")}])
+
+```
+
+## Problem 2
+```{r}
+x = runif(1000)
+y = runif(1000)
+vec_logic = c
+coerced_numeric = as.numeric(vec_logic)
+
+hwframe = data.frame()
+```
+
