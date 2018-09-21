@@ -7,6 +7,14 @@ output: html_document
 ## Problem 1
 
 ```{r}
+set.seed(2018)
 
-```
+random_sample = runif(10, 0, 5)
+vec_logic = random_sample > 2
+vec_char = as.character(vec_logic) 
+vec_factor = as.factor(vec_logic) 
+
+pr1_df = data.frame(random_sample, vec_logic, vec_char, vec_factor, stringsAsFactors = FALSE)
+sapply(pr1_df, mean)
+
 
