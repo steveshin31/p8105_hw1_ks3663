@@ -57,4 +57,12 @@ pr2_df = data.frame(x, y, pr2_log, pr2_numeric, pr2_factor)
 
 
 ```
+size of data set: `r nrow(pr2_df)` rows and `r ncol(pr2_df)` columns 
+
+mean of x = `r mean(x)`    
+
+median of x = `r median(x)`   
+
+proportion of cases logical vector is true = `r mean(pr2_log)*100`% 
+
 
